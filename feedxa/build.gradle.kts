@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.parcelize)
+    id("maven-publish")
 }
 
 android {
@@ -64,3 +65,6 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.compose.material3.v120)
 }
+
+group = "com.asb.feedxa"  // ده مهم للجيتباك
+version = "1.0.0"                 // رقم الإصدار
