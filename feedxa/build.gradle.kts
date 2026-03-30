@@ -42,6 +42,12 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.10"
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
 }
 
 dependencies {
@@ -66,18 +72,20 @@ dependencies {
     implementation(libs.androidx.compose.material3.v120)
 }
 
-//group = "com.asb.feedxa"  // ده مهم للجيتباك
-//version = "1.0.0"                 // رقم الإصدار
+group = "com.github.amralsaidy"  // ده مهم للجيتباك
+version = "1.0.0"                 // رقم الإصدار
 
 afterEvaluate {
     publishing {
         publications {
             create<MavenPublication>("release") {
-                from(components["release"])
 
                 groupId = "com.github.amralsaidy"
                 artifactId = "feedxa"
                 version = "1.0.0"
+
+                // 👇 أهم سطر
+                artifact(layout.buildDirectory.file("outputs/aar/feedxa-release.aar"))
             }
         }
     }
