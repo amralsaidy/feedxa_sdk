@@ -85,7 +85,12 @@ afterEvaluate {
                 version = "1.0.0"
 
                 // 👇 أهم سطر
-                artifact(layout.buildDirectory.file("outputs/aar/feedxa-release.aar"))
+                artifact(
+                    layout.buildDirectory
+                        .file("outputs/aar/feedxa-release.aar")
+                        .get()
+                        .asFile
+                )
             }
         }
     }
