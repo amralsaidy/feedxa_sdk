@@ -23,5 +23,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "feedxa_sdk"
-include(":app")
 include(":feedxa")
