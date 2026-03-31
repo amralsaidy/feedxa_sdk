@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.DialogFragment
+import com.asb.feedxa.core.FeedbackSDK
 import com.asb.feedxa.ui.composables.FeedbackBottomSheet
 
 /**
@@ -34,6 +35,10 @@ class FeedbackBottomSheetWrapper : DialogFragment() {
         }
 
         fun show(context: Context) {
+            // ✅ 1. استدعاء دالة العرض لتحديث الحالة الداخلية (isShowing = true)
+            // وتحديث بيانات المستخدم والشاشة في الـ ViewModel
+            FeedbackSDK.show()
+
             val fragment = newInstance()
             val fragmentManager = (context as? androidx.appcompat.app.AppCompatActivity)?.supportFragmentManager
             fragmentManager?.let {

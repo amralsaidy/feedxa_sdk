@@ -24,6 +24,11 @@ fun FeedbackBottomSheet(
 ) {
     val showSheet by FeedbackSDK.isShowing
 
+    // ✅ ضمان استدعاء show() عند دخول الـ Composable
+    LaunchedEffect(Unit) {
+        FeedbackSDK.show()
+    }
+
     if (showSheet) {
         ModalBottomSheet(
             onDismissRequest = onDismiss,
