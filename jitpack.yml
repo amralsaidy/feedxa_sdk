@@ -1,0 +1,9 @@
+# jitpack.yml
+jdk:
+  - openjdk11
+
+before_install:
+  - yes | sdkmanager "platforms;android-36"
+  -
+install:
+  - ./gradlew :feedxa:publishReleasePublicationToMavenLocal -xtest
