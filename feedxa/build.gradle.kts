@@ -68,7 +68,7 @@ dependencies {
 
 // ✅ تعريف group و version مرة واحدة فقط
 group = "com.github.amralsaidy"
-version = "1.0.0"
+version = "1.0.1"
 
 afterEvaluate {
     publishing {
